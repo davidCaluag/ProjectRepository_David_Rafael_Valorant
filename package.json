@@ -8,6 +8,7 @@
   "dependencies": {
     "glob": "^7.2.0",
     "react": "18.2.0",
-    "react-native": "0.71.6"
+    "react-native": "0.71.6",
+    "react-native-maps": "^1.4.0"
   }
 }
