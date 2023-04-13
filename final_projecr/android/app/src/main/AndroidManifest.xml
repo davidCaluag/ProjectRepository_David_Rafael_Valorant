@@ -46,6 +46,9 @@
             <meta-data
                     android:name="androidx.lifecycle.ProcessLifecycleInitializer"
                     android:value="androidx.startup" />
+            <meta-data
+                    android:name="com.google.android.geo.API_KEY"
+                    android:value="AIzaSyDiClENKJvO8h16RvBKwT2p567TyztZf2s"/>
         </provider>
     </application>
 

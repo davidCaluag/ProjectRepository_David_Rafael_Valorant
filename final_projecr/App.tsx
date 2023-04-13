@@ -4,7 +4,7 @@
  *
  * @format
  */
-
+import {enableLatestRenderer} from 'react-native-maps';
 import React from 'react';
 import MapView from 'react-native-maps';
 import { Marker } from 'react-native-maps';
@@ -18,7 +18,7 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-
+enableLatestRenderer();
 import {
   Colors,
   DebugInstructions,

@@ -8,6 +8,7 @@ import com.android.build.OutputFile
  * By default you don't need to apply any configuration, just uncomment the lines you need.
  */
 react {
+
     /* Folders */
     //   The root of your project, i.e. where "package.json" lives. Default is '..'
     // root = file("../")
@@ -88,6 +89,8 @@ def reactNativeArchitectures() {
     return value ? value.split(",") : ["armeabi-v7a", "x86", "x86_64", "arm64-v8a"]
 }
 
+
+
 android {
     ndkVersion rootProject.ext.ndkVersion
 
@@ -100,6 +103,8 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        ndkVersion "23.0.7599858" // or the latest version available
+        ext.kotlin_version = '1.6.0' // <= expected version is 1.6.0
     }
 
     splits {
@@ -150,9 +155,13 @@ android {
 
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
-    implementation("com.facebook.react:react-android")
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "com.facebook.react:react-native:+"
+    implementation "com.google.android.material:material:1.4.0" // or the latest version available
+    implementation "androidx.appcompat:appcompat:1.4.0" // or the latest version available
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0" // or the latest version available
     implementation project(':react-native-maps')
-    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
+
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
     debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
